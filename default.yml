@@ -1,0 +1,8 @@
+---
+# file: tests/pull_request.yml
+- hosts: all
+  connection: local
+  gather_facts: yes
+  tasks:
+    - debug:
+        msg="Pull Request!"

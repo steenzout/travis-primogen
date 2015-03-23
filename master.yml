@@ -1,0 +1,8 @@
+---
+# file: tests/master.yml
+- hosts: all
+  connection: local
+  gather_facts: yes
+  tasks:
+    - debug:
+        msg="Master branch!"

@@ -1,0 +1,8 @@
+---
+# file: tests/release.yml
+- hosts: all
+  connection: local
+  gather_facts: yes
+  tasks:
+    - debug:
+        msg="Release branch!"
