@@ -10,5 +10,5 @@ after_success:
   - pip install ansible=="$ANSIBLE_VERSION"
   - test $TRAVIS_PULL_REQUEST == "true" && echo 'Pull request!' && ansible-playbook -i 127.0.0.1 default.yml || false
   - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "develop" && ansible-playbook -i 127.0.0.1 default.yml || false
-  - test $TRAVIS_PULL_REQUEST == "false" && [[ $TRAVIS_BRANCH == "release*" ]] && echo 'Release!' && ansible-playbook -i 127.0.0.1 release.yml || false
+  - test $TRAVIS_PULL_REQUEST == "false" && [[ $TRAVIS_BRANCH == release* ]] && echo 'Release!' && ansible-playbook -i 127.0.0.1 release.yml || false
   - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && echo 'Master!' && ansible-playbook -i 127.0.0.1 master.yml || false
